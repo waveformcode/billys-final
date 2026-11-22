@@ -4,8 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Billy's Public House · Agios Nikolaos</title>
-    <link rel="icon" href="/assets/billys-logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/billys-logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -15,7 +22,7 @@
           class="site-header__toggle"
           type="button"
           aria-label="Menu"
-          aria-expanded="false"
+          popovertarget="site-menu"
         >
           <span class="site-header__toggle-line"></span>
           <span class="site-header__toggle-line"></span>
@@ -35,7 +42,7 @@
           />
         </a>
 
-        <ul class="site-header__menu">
+        <ul class="site-header__menu" id="site-menu" popover>
           <li class="site-header__item">
             <a class="site-header__link" href="#tables">Tables</a>
           </li>

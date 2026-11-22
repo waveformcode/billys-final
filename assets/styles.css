@@ -1,0 +1,118 @@
+/*=== RESET ===*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #111111;
+  --bg-color2: #bdbab4;
+  --bg-color-mobile-nav: #1a1816;
+  --color-text-main: #ede6d8;
+  --color-muted: #ede6d8a8;
+  --color-figcaption: #ede6d86b;
+  --color-red-button: #b8121d;
+  --color-red-bright: #e0262f;
+  --color-line: #ede6d81f;
+  --ff-yellowtail: "Yellowtail", cursive;
+  --ff-oswald: "Oswald", sans-serif;
+  --ls-small: 0.05em;
+  --ls-medium: 0.2em;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--ff-oswald);
+  color: var(--color-text-main);
+}
+/*=== HEADER ===*/
+.site-header__nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem;
+  max-width: 100%;
+}
+
+.site-header__menu {
+  display: flex;
+  gap: 2rem;
+  position: static;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.site-header__item {
+  list-style: none;
+}
+
+.site-header__link,
+.site-header__lang-link {
+  text-decoration: none;
+  color: var(--color-muted);
+  letter-spacing: var(--ls-small);
+  text-transform: uppercase;
+}
+
+.site-header__lang {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 0.5rem;
+}
+
+.site-header__slash {
+  color: var(--color-muted);
+}
+
+.site-header__link:is(:hover, :focus-visible),
+.site-header__lang-link:is(:hover, :focus-visible) {
+  color: var(--color-text-main);
+}
+
+.site-header__toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /*=== HEADER MOBILE ===*/
+  .site-header__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .site-header__toggle-line {
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-text-main);
+  }
+
+  /*=== MOBILE MENU CLOSE ===*/
+  .site-header__menu:not(:popover-open) {
+    display: none;
+  }
+
+  /*=== MOBILE MENU OPEN ===*/
+  .site-header__menu:popover-open {
+    position: fixed;
+    inset: 5rem 0 0 0;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    background: var(--bg-color-mobile-nav);
+    border-top: 1px solid var(--color-line);
+    align-items: center;
+  }
+}
