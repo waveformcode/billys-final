@@ -8,6 +8,67 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
+    <header class="site-header">
+      <nav class="site-header__nav" aria-label="Main">
+        <!--HEADER BUTTON-->
+        <button
+          class="site-header__toggle"
+          type="button"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span class="site-header__toggle-line"></span>
+          <span class="site-header__toggle-line"></span>
+          <span class="site-header__toggle-line"></span>
+        </button>
+        <a
+          href="#top"
+          class="site-header__logo-link"
+          aria-label="Billy's Public House, home"
+        >
+          <img
+            class="site-header__logo-img"
+            src="./assets/billys-logo.svg"
+            alt="Billy's Public House"
+            width="48"
+            height="48"
+          />
+        </a>
+
+        <ul class="site-header__menu">
+          <li class="site-header__item">
+            <a class="site-header__link" href="#tables">Tables</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#games">Games</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#sports">Sports</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#bar">Bar</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#find">Find us</a>
+          </li>
+        </ul>
+
+        <div class="site-header__lang">
+          <a class="site-header__lang-link" href="#" lang="el" hreflang="el"
+            >el
+          </a>
+          <span class="site-header__slash" aria-hidden="true">/</span>
+          <a
+            class="site-header__lang-link"
+            href="index.html"
+            lang="en"
+            hreflang="en"
+            aria-current="true"
+            >en</a
+          >
+        </div>
+      </nav>
+    </header>
     <main></main>
   </body>
 </html>
