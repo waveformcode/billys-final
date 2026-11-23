@@ -6,3 +6,27 @@ menu.addEventListener("click", (event) => {
     menu.hidePopover();
   }
 });
+
+//Ball move
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (!reduceMotion.matches) {
+  const heads = document.querySelectorAll(".section-head");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("section-head--rolled");
+          observer.unobserve(entry.target); // μόνο μία φορά
+        }
+      });
+    },
+    { threshold: 1 },
+  );
+
+  heads.forEach((head) => {
+    head.classList.add("section-head--armed");
+    observer.observe(head);
+  });
+}

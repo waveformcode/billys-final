@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yellowtail&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@200..700&family=Yellowtail&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/script.js" defer></script>
   </head>
   <body>
+    <!-- HEADER SECTION -->
     <header class="site-header">
       <nav class="site-header__nav" aria-label="Main">
         <!--HEADER BUTTON-->
@@ -44,7 +45,7 @@
 
         <ul class="site-header__menu" id="site-menu" popover>
           <li class="site-header__item">
-            <a class="site-header__link" href="#tables">Tables</a>
+            <a class="site-header__link" href="#billiards">Billiards</a>
           </li>
           <li class="site-header__item">
             <a class="site-header__link" href="#games">Games</a>
@@ -77,6 +78,7 @@
       </nav>
     </header>
     <main>
+      <!-- HERO SECTION -->
       <section class="hero">
         <!-- HERO IMAGE -->
 
@@ -128,6 +130,75 @@
                 >Call the bar</a
               >
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BILLIARDS SECTION -->
+      <section id="billiards" class="billiards">
+        <div class="billiards__wrapper">
+          <div class="section-head">
+            <span class="section-head__label">Billiards</span>
+            <span class="section-head__track" aria-hidden="true">
+              <span class="section-head__ball ball ball--1"
+                ><span class="ball__number">1</span></span
+              >
+            </span>
+          </div>
+
+          <div class="billiards__intro">
+            <h2 class="billiards__title">
+              The <em class="billiards__title-accent">tables</em>
+            </h2>
+
+            <div class="billiards__text">
+              <p class="billiards__paragraph">
+                Billy’s has always been a billiards pub first. The tables are
+                the heart of the place. Rack up a casual game with friends, or
+                challenge the regulars.
+              </p>
+              <dl class="billiards__info">
+                <div class="billiards__info-item">
+                  <dt class="billiards__info-title">Tables</dt>
+                  <dd class="billiards__info-text">Three</dd>
+                </div>
+                <div class="billiards__info-item">
+                  <dt class="billiards__info-title">Per hour</dt>
+                  <dd class="billiards__info-text"></dd>
+                </div>
+                <div class="billiards__info-item">
+                  <dt class="billiards__info-title">Booking</dt>
+                  <dd class="billiards__info-text">Walk in</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="billiards__gallery">
+            <img
+              class="billiards__gallery-img"
+              src="assets/photos/billiards-top2.webp"
+              width="2040"
+              height="3066"
+              alt="The balls spread across the red felt after the break"
+              loading="lazy"
+            />
+            <img
+              class="billiards__gallery-img"
+              src="assets/photos/billiards-top.webp"
+              width="1200"
+              height="1804"
+              alt="A red table seen from above, the balls racked under the hanging lamps"
+              loading="lazy"
+            />
+            <img
+              class="billiards__gallery-img billiards__gallery-img--corner"
+              src="assets/photos/billiards-top3.webp"
+              width="3400"
+              height="2267"
+              alt="A corner pocket of the table, the rack set on the red felt"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
