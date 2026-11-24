@@ -44,6 +44,28 @@
         </a>
 
         <ul class="site-header__menu" id="site-menu" popover>
+          <li class="site-header__menu-top">
+            <a
+              href="#top"
+              class="site-header__logo-link"
+              aria-label="Billy's Public House, home"
+            >
+              <img
+                class="site-header__logo-img"
+                src="./assets/billys-logo.svg"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </a>
+            <button
+              class="site-header__close"
+              type="button"
+              aria-label="Close menu"
+              popovertarget="site-menu"
+              popovertargetaction="hide"
+            ></button>
+          </li>
           <li class="site-header__item">
             <a class="site-header__link" href="#billiards">Billiards</a>
           </li>
@@ -58,6 +80,20 @@
           </li>
           <li class="site-header__item">
             <a class="site-header__link" href="#find">Find us</a>
+          </li>
+          <li class="site-header__item site-header__item--lang">
+            <a class="site-header__menu-lang" href="#" lang="el" hreflang="el"
+              >Ελληνικά</a
+            >
+            <span class="site-header__menu-lang-sep" aria-hidden="true">/</span>
+            <a
+              class="site-header__menu-lang"
+              href="index.html"
+              lang="en"
+              hreflang="en"
+              aria-current="true"
+              >English</a
+            >
           </li>
         </ul>
 
@@ -138,12 +174,9 @@
       <section id="billiards" class="billiards">
         <div class="billiards__wrapper">
           <div class="section-head">
-            <span class="section-head__label">Billiards</span>
-            <!--<span class="section-head__track" aria-hidden="true">
-              <span class="section-head__ball ball ball--1"
-                ><span class="ball__number">1</span></span
-              >
-            </span>-->
+            <span class="section-head__label section-head__label--billiards"
+              >Billiards</span
+            >
           </div>
 
           <div class="billiards__intro">
@@ -196,11 +229,6 @@
             <span class="section-head__label"
               >Darts / Pinball / PlayStation</span
             >
-            <!--  <span class="section-head__track" aria-hidden="true">
-              <span class="section-head__ball ball ball--2"
-                ><span class="ball__number">2</span></span
-              >
-            </span>-->
           </div>
 
           <h2 class="games__title">
@@ -267,11 +295,6 @@
         <div class="sports__wrapper">
           <div class="section-head">
             <span class="section-head__label">Live sports</span>
-            <!--<span class="section-head__track" aria-hidden="true">
-              <span class="section-head__ball ball ball--3"
-                ><span class="ball__number">3</span></span
-              >
-            </span>-->
           </div>
 
           <div class="sports__intro">
@@ -297,6 +320,142 @@
           </div>
         </div>
       </section>
+
+      <!-- HISTORY SECTION -->
+      <section id="history" class="history">
+        <div class="history__wrapper">
+          <div class="section-head">
+            <span class="section-head__label">The story</span>
+          </div>
+
+          <div class="history__grid">
+            <div class="history__text">
+              <h2 class="history__title">
+                Since <em class="history__title-accent"><br />1987</em>
+              </h2>
+              <p class="history__paragraph paragraph">
+                Billy opened the doors in 1987. The town walked in and never
+                really left. Today the new generation runs the bar, and the
+                nights that came before are still on the wall.
+              </p>
+            </div>
+
+            <div class="history__gallery">
+              <figure class="history__frame">
+                <img
+                  class="history__gallery-img"
+                  src="assets/photos/billiards_1987_4.webp"
+                  width="1132"
+                  height="688"
+                  alt="Billy's in the eighties, a player lining up a shot at a green table"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="history__frame">
+                <img
+                  class="history__gallery-img"
+                  src="assets/photos/billiards_1987_3.webp"
+                  width="1132"
+                  height="693"
+                  alt="A crowded night in the eighties, players around the tables"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="history__frame history__frame--tall">
+                <img
+                  class="history__gallery-img"
+                  src="assets/photos/billiards_1987_2.webp"
+                  width="692"
+                  height="1161"
+                  alt="Customers at the bar in the eighties"
+                  loading="lazy"
+                />
+                <figcaption class="history__caption">
+                  Opening season, 1987
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FIND US SECTION -->
+      <section id="find" class="find">
+        <div class="find__wrapper">
+          <div class="section-head">
+            <span class="section-head__label">Find us</span>
+          </div>
+
+          <div class="find__grid">
+            <div class="find__text">
+              <h2 class="find__title">
+                Find <em class="find__title-accent">us</em>
+              </h2>
+
+              <dl class="find__info">
+                <div class="find__info-item">
+                  <dt class="find__label">Open every night</dt>
+                  <dd class="find__hours">18:00 – 01:00</dd>
+                </div>
+                <div class="find__info-item">
+                  <dt class="find__label">Address</dt>
+                  <dd class="find__value">
+                    <address class="find__address">
+                      Konstantinou Sfakianaki 20<br />
+                      Agios Nikolaos 72100, Crete<br />
+                      Look for the red balcony.
+                    </address>
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="hero__links">
+                <a
+                  class="button button--main"
+                  href="https://maps.app.goo.gl/GQYf6XqLFFtqe7Yu7"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Get Directions (opens in a new tab)"
+                  >Get Directions</a
+                >
+                <a class="button button--secondary" href="tel:+306970240215"
+                  >Call the bar</a
+                >
+              </div>
+            </div>
+
+            <figure class="find__figure">
+              <img
+                class="find__img"
+                src="assets/photos/location-img.webp"
+                width="1152"
+                height="2048"
+                alt="Billy's at night from the street, the balcony lit red with the blue neon sign on the railing"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- FOOTER SECTION SECTION -->
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <span class="footer__copy">© 2026 Billy's Public House</span>
+        <img
+          class="footer__logo"
+          src="./assets/billys-logo.svg"
+          alt="Billy's Public House"
+          width="40"
+          height="40"
+        />
+        <a
+          href="https://www.instagram.com/billys_publichouse/"
+          class="footer__link"
+          >Instagram</a
+        >
+      </div>
+    </footer>
   </body>
 </html>

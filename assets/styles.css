@@ -16,14 +16,14 @@
   --color-figcaption: #ede6d86b;
   --color-red-button: #8e0d15;
   --color-red-bright: #e0262f;
+  --color-gold: #c9a66b;
   --color-line: #ede6d81f;
   --color-line-dark: #11111140;
   --ff-yellowtail: "Yellowtail", cursive;
   --ff-oswald: "Oswald", sans-serif;
   --ff-body: "Lato", sans-serif;
-  --fs-paragraph: clamp(1.1rem, 0.8rem + 0.5vw, 1.2rem);
-  --fs-paragraph2: clamp(1rem, 5vw, 1.6rem);
-  --fs-heading: clamp(4rem, 10vw, 8rem);
+  --fs-paragraph: clamp(1.05rem, 0.9rem + 0.4vw, 1.25rem);
+  --fs-heading: clamp(4rem, 10vw, 12rem);
   --ls-small: 0.05em;
   --ls-medium: 0.09em;
   --ls-large: 0.2em;
@@ -38,6 +38,15 @@ body {
   color: var(--color-text-main);
 }
 
+.billiards__wrapper,
+.games__wrapper,
+.sports__wrapper,
+.history__wrapper,
+.find__wrapper,
+.footer__wrapper {
+  margin-inline: var(--padding-page);
+}
+
 img,
 svg {
   display: block;
@@ -45,18 +54,36 @@ svg {
   height: auto;
 }
 
-.section-head {
+.billiards__title-accent,
+.games__title-accent,
+.sports__title-accent,
+.bar__title-accent,
+.history__title-accent,
+.find__title-accent {
+  color: var(--color-red-bright);
+  font-style: normal;
 }
 
-.sports__title-accent {
-  color: var(--color-red-bright);
+.hero__title,
+.billiards__title,
+.games__title,
+.sports__title,
+.bar__title,
+.history__title,
+.find__title {
+  font-size: clamp(4.5rem, 10vw, 12rem);
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .paragraph {
-  font-size: var(--fs-paragraph2);
-  letter-spacing: var(--ls-small);
-  line-height: 1.3;
+  font-family: var(--ff-body);
+  font-size: var(--fs-paragraph);
+  letter-spacing: 0;
+  line-height: 1.55;
   font-weight: 400;
+  text-wrap: pretty;
   color: var(--color-muted);
 }
 
@@ -84,8 +111,14 @@ svg {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.button:is(:hover, :focus-visible)::before {
+.button:focus-visible::before {
   transform: scaleY(1);
+}
+
+@media (hover: hover) {
+  .button:hover::before {
+    transform: scaleY(1);
+  }
 }
 
 .button--main {
@@ -108,9 +141,14 @@ svg {
   background-color: var(--color-text-main);
 }
 
-.button--secondary:is(:hover, :focus-visible) {
-  color: var(--color-background-main);
+.button--secondary:focus-visible {
   color: var(--bg-color);
+}
+
+@media (hover: hover) {
+  .button--secondary:hover {
+    color: var(--bg-color);
+  }
 }
 /* #endregion */
 
@@ -121,7 +159,6 @@ svg {
   gap: 1rem;
   padding-top: 1.5rem;
   margin-bottom: 3rem;
-  /* Κάθε section μπορεί να αλλάξει το χρώμα της γραμμής με --section-head-line */
   border-top: 1px solid var(--section-head-line, var(--color-line-dark));
 }
 
@@ -129,37 +166,12 @@ svg {
   text-transform: uppercase;
   letter-spacing: var(--ls-large);
   font-size: 0.85rem;
+  color: var(--color-muted);
 }
 
-.ball {
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-}
-
-.ball--1 {
-  background-color: var(--color-ball-1);
-}
-
-.ball--2 {
-  background-color: var(--color-ball-2);
-}
-
-.ball__number {
-  display: grid;
-  place-items: center;
-  width: 55%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: #fff;
-  color: var(--bg-color);
-  font-size: 0.8rem;
-  font-weight: 700;
-}
 /* #endregion */
 
+/*=== HEADER SECTION ===*/
 /* #region HEADER */
 .site-header {
   position: absolute;
@@ -210,16 +222,29 @@ svg {
   color: var(--color-muted);
 }
 
-.site-header__link:is(:hover, :focus-visible),
-.site-header__lang-link:is(:hover, :focus-visible) {
+.site-header__link:focus-visible,
+.site-header__lang-link:focus-visible {
   color: var(--color-text-main);
+}
+
+@media (hover: hover) {
+  .site-header__link:hover,
+  .site-header__lang-link:hover {
+    color: var(--color-text-main);
+  }
 }
 
 .site-header__toggle {
   display: none;
 }
+
+.site-header__menu-top,
+.site-header__item--lang {
+  display: none;
+}
 /* #endregion */
 
+/*=== HERO SECTION ===*/
 /* #region HERO */
 .hero {
   display: flex;
@@ -316,6 +341,7 @@ svg {
 }
 /* #endregion */
 
+/*=== BILLIARDS SECTION ===*/
 /* #region BILIARDS */
 .billiards {
   background-color: var(--bg-color2);
@@ -323,39 +349,28 @@ svg {
   padding-block: 7.5rem;
 }
 
-.billiards__wrapper {
-  margin-inline: var(--padding-page);
-}
-
 .billiards__intro {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   align-items: end;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
-.billiards__title {
-  font-size: clamp(4rem, 10vw, 8rem);
-  font-style: normal;
-  line-height: 1.1;
-  font-weight: 500;
-}
-
-.billiards__title-accent {
-  font-family: var(--ff-yellowtail);
-  font-style: normal;
-  font-weight: 400;
-  color: var(--color-red-bright);
+.section-head__label--billiards {
+  color: #111111b8;
 }
 
 .billiards__text {
-  justify-self: end;
   width: min(100%, 38rem);
 }
 
+.billiards__title-accent {
+  color: var(--color-red-button);
+}
+
 .billiards__paragraph {
-  max-width: 35ch;
-  color: var(--bg-color);
+  max-width: 36ch;
+  color: #111111b8;
 }
 
 .billiards__gallery {
@@ -378,6 +393,7 @@ svg {
 }
 /* #endregion */
 
+/*=== GAMES SECTION ===*/
 /* #region GAMES */
 .games {
   --section-head-line: var(--color-line);
@@ -386,22 +402,8 @@ svg {
   padding-block: 7.5rem;
 }
 
-.games__wrapper {
-  margin-inline: var(--padding-page);
-}
-
 .games__title {
-  font-size: clamp(4rem, 10vw, 8rem);
-  font-weight: 500;
-  line-height: 1.1;
   margin-bottom: 3rem;
-}
-
-.games__title-accent {
-  font-family: var(--ff-yellowtail);
-  font-style: normal;
-  font-weight: 400;
-  color: var(--color-red-bright);
 }
 
 .games__cards {
@@ -452,9 +454,6 @@ svg {
   color: var(--color-text-main);
   padding-block: 7.5rem;
 }
-.sports__wrapper {
-  margin-inline: var(--padding-page);
-}
 
 .sports__intro {
   display: grid;
@@ -464,13 +463,13 @@ svg {
 }
 
 .sports__title {
-  font-size: var(--fs-heading);
-  line-height: 1.1;
   margin-bottom: 3rem;
 }
 
 .sports__paragraph {
-  max-width: 30ch;
+  max-width: 32ch;
+  border-left: 2px solid var(--color-red-button);
+  padding-left: 1.25rem;
 }
 
 .sports__list {
@@ -495,6 +494,177 @@ svg {
   margin-top: 1rem;
 } /* #endregion */
 
+/*=== HISTORY SECTION ===*/
+/* #region HISTORY */
+.history {
+  --section-head-line: var(--color-line);
+  background-color: var(--bg-color);
+  padding-block: 7.5rem;
+}
+
+.history__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.history__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.history__paragraph {
+  max-width: 40ch;
+  margin-top: 2rem;
+}
+
+.history__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem 2rem;
+  align-items: center;
+}
+
+.history__frame {
+  background-color: var(--color-text-main);
+  padding: 0.75rem;
+  border: 6px solid #3a2a1e;
+  box-shadow: 0 1.25rem 2.5rem rgb(0 0 0 / 0.6);
+}
+
+.history__frame:nth-child(1) {
+  rotate: -2deg;
+}
+
+.history__frame:nth-child(2) {
+  rotate: 1deg;
+}
+
+.history__frame--tall {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  rotate: 1.5deg;
+}
+
+.history__gallery-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.history__frame--tall .history__gallery-img {
+  aspect-ratio: 3 / 4;
+}
+
+.history__caption {
+  padding-top: 0.75rem;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: var(--ls-large);
+  text-transform: uppercase;
+  color: var(--bg-color);
+} /* #endregion */
+
+/*=== FIND US SECTION ===*/
+/* #region FIND US */
+.find {
+  --section-head-line: var(--color-line);
+  background-color: var(--bg-color);
+  color: var(--color-text-main);
+  padding-block: 7.5rem;
+}
+
+.find__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.find__title {
+  margin-bottom: 4rem;
+}
+
+.find__label {
+  color: var(--color-gold);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-large);
+  font-size: 0.8rem;
+}
+
+.find__hours {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--color-muted);
+}
+
+.find__address {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  letter-spacing: var(--ls-small);
+  color: var(--color-muted);
+  margin-bottom: 4rem;
+  margin-top: 0.5rem;
+}
+
+.find__img {
+  aspect-ratio: 4 / 4;
+  object-fit: cover;
+}
+/* #endregion */
+
+/*=== FOOTER SECTION ===*/
+/* #region FOOTER */
+.footer {
+  --section-head-line: var(--color-line);
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--color-line);
+  padding-block: 2rem;
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.footer__copy,
+.footer__link {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-large);
+}
+
+.footer__copy {
+  justify-self: flex-start;
+  color: var(--color-muted);
+}
+
+.footer__logo {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.footer__link {
+  justify-self: flex-end;
+  text-decoration: none;
+  color: var(--color-muted);
+}
+
+.footer__link:focus-visible {
+  color: var(--color-text-main);
+}
+
+@media (hover: hover) {
+  .footer-link:hover {
+    color: var(--color-text-main);
+  }
+}
+/* #endregion */
+
+/*=== RESPONSIVE ===*/
 /* #region RESPONSIVE */
 @media (max-width: 768px) {
   /*=== HEADER MOBILE ===*/
@@ -523,19 +693,123 @@ svg {
   /*=== MOBILE MENU OPEN ===*/
   .site-header__menu:popover-open {
     position: fixed;
-    inset: 5rem 0 0 0;
-    width: auto;
-    height: auto;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    max-height: none;
+    display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem 1.25rem max(2rem, env(safe-area-inset-bottom));
     background: var(--bg-color-mobile-nav);
-    border-top: 1px solid var(--color-line);
+    border: 0;
+    overflow-y: auto;
+  }
+
+  body:has(.site-header__menu:popover-open) {
+    overflow: hidden;
+  }
+
+  .site-header__menu-top {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+  }
+
+  .site-header__close {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .site-header__close::before,
+  .site-header__close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-text-main);
+    translate: -50% -50%;
+    rotate: 45deg;
+  }
+
+  .site-header__close::after {
+    rotate: -45deg;
+  }
+
+  .site-header__menu:popover-open
+    .site-header__item:not(.site-header__item--lang) {
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .site-header__menu:popover-open .site-header__link {
+    display: block;
+    padding-block: 1.1rem;
+    font-size: clamp(2.25rem, 11vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-text-main);
+  }
+
+  .site-header__item--lang {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  .site-header__menu-lang {
+    color: var(--color-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-large);
+    font-size: 1rem;
+    opacity: 0.65;
+  }
+
+  .site-header__menu-lang[aria-current] {
+    opacity: 1;
+    font-weight: 600;
+  }
+
+  .site-header__menu-lang-sep {
+    color: var(--color-gold);
+    opacity: 0.4;
   }
 
   /*=== HEADER NAV MOBILE ===*/
   .site-header__nav {
+    grid-template-columns: 1fr auto;
     padding-inline: 1.25rem;
+  }
+
+  .site-header__nav > .site-header__logo-link {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .site-header__nav > .site-header__toggle {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .site-header__nav > .site-header__lang {
+    display: none;
+  }
+
+  .site-header__logo-img {
+    width: 3.5rem;
+    height: 3.5rem;
   } /* #endregion */
 
   /*=== HERO MOBILE ===*/
@@ -589,10 +863,6 @@ svg {
     margin-bottom: 1rem;
   }
 
-  .billiards__paragraph {
-    line-height: 1.2;
-  }
-
   .billiards__gallery {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -644,6 +914,8 @@ svg {
     font-size: 1.75rem;
   } /* #endregion */
 
+  /*=== LIVE SPORTS MOBILE ===*/
+  /* #region HISTORY MOBILE */
   .sports {
     padding-block: 5rem 0;
   }
@@ -657,7 +929,102 @@ svg {
     display: flex;
     flex-direction: column;
     margin-inline: 0;
-  }
-}
+  } /* #endregion */
 
-/* #endregion */
+  /*=== HISTORY MOBILE ===*/
+  /* #region HISTORY MOBILE */
+  .history {
+    padding-inline: 1.25rem;
+    padding-block: 5rem 0;
+  }
+
+  .history__wrapper {
+    margin-inline: 0;
+  }
+
+  .history__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history__paragraph {
+    margin-bottom: 2rem;
+  }
+
+  .history__gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  .history__frame--tall {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .history__frame--featured .history__gallery-img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .history__gallery .history__frame {
+    rotate: none;
+  }
+
+  .history__frame {
+    padding: 0.5rem;
+    border-width: 4px;
+  } /* #endregion */
+
+  /*=== FIND US MOBILE ===*/
+  /* #region FIND US MOBILE */
+  .find {
+    padding-inline: 1.25rem;
+    padding-block: 5rem;
+  }
+
+  .find__wrapper {
+    margin-inline: 0;
+  }
+
+  .find__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .find__title {
+    margin-bottom: 2rem;
+  } /* #endregion */
+
+  /*=== FOOTER MOBILE ===*/
+  /* #region FOOTER MOBILE */
+  .footer {
+    padding-inline: 1.25rem;
+    padding-block: 2rem max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .footer__wrapper {
+    margin-inline: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .footer__logo {
+    order: 1;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .footer__link {
+    order: 2;
+    padding-block: 0.75rem;
+  }
+
+  .footer__copy {
+    order: 3;
+    font-size: 0.75rem;
+    color: var(--color-figcaption);
+  }
+
+  /* #endregion */
+}
