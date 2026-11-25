@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Billy's Public House · Άγιος Νικόλαος</title>
+    <link rel="alternate" hreflang="en" href="../" />
+    <link rel="alternate" hreflang="el" href="./" />
+    <link rel="alternate" hreflang="x-default" href="../" />
+    <link rel="icon" href="../assets/billys-logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Fira+Sans:wght@300;400;600;700&family=Lato:wght@300;400;700&family=Oswald:wght@200..700&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script src="../assets/script.js" defer></script>
+  </head>
+  <body>
+    <!-- HEADER SECTION -->
+    <header class="site-header">
+      <nav class="site-header__nav" aria-label="Κύριο">
+        <!--HEADER BUTTON-->
+        <button
+          class="site-header__toggle"
+          type="button"
+          aria-label="Μενού"
+          popovertarget="site-menu"
+        >
+          <span class="site-header__toggle-line"></span>
+          <span class="site-header__toggle-line"></span>
+          <span class="site-header__toggle-line"></span>
+        </button>
+        <a
+          href="#top"
+          class="site-header__logo-link"
+          aria-label="Billy's Public House, αρχική"
+        >
+          <img
+            class="site-header__logo-img"
+            src="../assets/billys-logo.svg"
+            alt="Billy's Public House"
+            width="48"
+            height="48"
+          />
+        </a>
+
+        <ul class="site-header__menu" id="site-menu" popover>
+          <li class="site-header__menu-top">
+            <a
+              href="#top"
+              class="site-header__logo-link"
+              aria-label="Billy's Public House, αρχική"
+            >
+              <img
+                class="site-header__logo-img"
+                src="../assets/billys-logo.svg"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </a>
+            <button
+              class="site-header__close"
+              type="button"
+              aria-label="Κλείσιμο μενού"
+              popovertarget="site-menu"
+              popovertargetaction="hide"
+            ></button>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#billiards">Μπιλιάρδο</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#games">Παιχνίδια</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#sports">Αθλητικά</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#bar">Μπαρ</a>
+          </li>
+          <li class="site-header__item">
+            <a class="site-header__link" href="#find">Βρείτε μας</a>
+          </li>
+          <li class="site-header__item site-header__item--lang">
+            <a
+              class="site-header__menu-lang"
+              href="./"
+              lang="el"
+              hreflang="el"
+              aria-current="true"
+              >Ελληνικά</a
+            >
+            <span class="site-header__menu-lang-sep" aria-hidden="true">/</span>
+            <a class="site-header__menu-lang" href="../" lang="en" hreflang="en"
+              >English</a
+            >
+          </li>
+        </ul>
+
+        <div class="site-header__lang">
+          <a
+            class="site-header__lang-link"
+            href="./"
+            lang="el"
+            hreflang="el"
+            aria-current="true"
+            >el</a
+          >
+          <span class="site-header__slash" aria-hidden="true">/</span>
+          <a class="site-header__lang-link" href="../" lang="en" hreflang="en"
+            >en</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <!-- HERO IMAGE -->
+
+        <img
+          class="hero__img"
+          src="../assets/photos/hero-billiards.webp"
+          alt="Σε ένα σκοτεινό δωμάτιο, ένα χέρι σημαδεύει με το στέκι πίσω από την άσπρη μπάλα πάνω σε κόκκινο τάπητα, με τις μπάλες στημένες στην άκρη του τραπεζιού"
+          width="4284"
+          height="3319"
+          fetchpriority="high"
+        />
+
+        <!-- HERO TITLE, SUB TEXT -->
+        <div class="hero__content">
+          <!-- AGIOS NIKOLAOS, EST. 1987 -->
+          <div class="hero__sub-text">
+            <!-- <p class="hero__sub-item">Agios Nikolaos, Crete</p>
+            <p class="hero__sub-item">est. <time datetime="1987">1987</time></p>-->
+          </div>
+
+          <!-- BILLY'S PUBLIC HOUSE -->
+          <h1 class="hero__heading">
+            <span class="hero__title"
+              >Billy<span class="hero__apostrophe">&rsquo;</span>s</span
+            >
+            <span class="hero__sub-title"
+              >Public <span class="hero__tagline-accent">House</span></span
+            >
+          </h1>
+
+          <!-- HERO PARAGRAPH, BUTTONS -->
+          <div class="hero__bottom">
+            <p class="hero__paragraph paragraph">
+              Μπιλιάρδο, βελάκια, φλίπερ και PlayStation, κρύα μπίρα και ο
+              αγώνας σε κάθε οθόνη. Το παλιό μπιλιαρδάδικο της πόλης.
+            </p>
+
+            <!-- GET DIRECTIONS, CALL THE BAR -->
+            <div class="hero__links">
+              <a
+                class="button button--main"
+                href="https://maps.app.goo.gl/GQYf6XqLFFtqe7Yu7"
+                target="_blank"
+                rel="noopener"
+                aria-label="Οδηγίες διαδρομής (ανοίγει σε νέα καρτέλα)"
+                >Οδηγίες διαδρομής</a
+              >
+              <a class="button button--secondary" href="tel:+306970240215"
+                >Καλέστε μας</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BILLIARDS SECTION -->
+      <section id="billiards" class="billiards">
+        <div class="billiards__wrapper">
+          <div class="section-head">
+            <span class="section-head__label section-head__label--billiards"
+              >Μπιλιάρδο</span
+            >
+          </div>
+
+          <div class="billiards__intro">
+            <h2 class="billiards__title">
+              Τα <em class="billiards__title-accent">τραπέζια</em>
+            </h2>
+
+            <div class="billiards__text">
+              <p class="billiards__paragraph paragraph">
+                Το Billy’s ήταν πάντα πρώτα απ’ όλα μπιλιαρδάδικο. Τα τραπέζια
+                είναι η καρδιά του μαγαζιού. Στήστε μια χαλαρή παρτίδα με φίλους
+                ή προκαλέστε τους θαμώνες.
+              </p>
+            </div>
+          </div>
+
+          <div class="billiards__gallery">
+            <img
+              class="billiards__gallery-img"
+              src="../assets/photos/billiards-top2.webp"
+              width="2040"
+              height="3066"
+              alt="Οι μπάλες απλωμένες στον κόκκινο τάπητα μετά το σπάσιμο"
+              loading="lazy"
+            />
+            <img
+              class="billiards__gallery-img"
+              src="../assets/photos/billiards-top.webp"
+              width="1200"
+              height="1804"
+              alt="Κόκκινο τραπέζι από ψηλά, οι μπάλες στημένες κάτω από τα κρεμαστά φώτα"
+              loading="lazy"
+            />
+            <img
+              class="billiards__gallery-img billiards__gallery-img--corner"
+              src="../assets/photos/billiards-top3.webp"
+              width="3400"
+              height="2267"
+              alt="Μια γωνιακή τρύπα του τραπεζιού, το τρίγωνο στημένο στον κόκκινο τάπητα"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- GAMES SECTION -->
+      <section id="games" class="games">
+        <div class="games__wrapper">
+          <div class="section-head">
+            <span class="section-head__label"
+              >Βελάκια / Φλίπερ / PlayStation</span
+            >
+          </div>
+
+          <h2 class="games__title">
+            <em class="games__title-accent">παιχνίδια</em>
+          </h2>
+
+          <div class="games__cards">
+            <article class="game-card">
+              <img
+                class="game-card__img"
+                src="../assets/photos/7e2778f5adaa5d61f7e5945b62bd089c.jpg"
+                width="1193"
+                height="795"
+                alt="Ένα βελάκι στον στόχο, από κοντά"
+                loading="lazy"
+              />
+              <div class="game-card__text">
+                <h3 class="game-card__title">Βελάκια</h3>
+                <p class="game-card__paragraph">
+                  Ένας στόχος για έναν γρήγορο γύρο ανάμεσα στις παρτίδες.
+                </p>
+              </div>
+            </article>
+            <article class="game-card">
+              <img
+                class="game-card__img"
+                src="../assets/photos/6d2bb1bbd399c4a3c2eaf0744ae3e14d.jpg"
+                width="1200"
+                height="795"
+                alt="Το φωτισμένο ταμπλό ενός φλίπερ"
+                loading="lazy"
+              />
+              <div class="game-card__text">
+                <h3 class="game-card__title">Φλίπερ</h3>
+                <p class="game-card__paragraph paragraph">
+                  [Όνομα μηχανής]. Άλλη μία μπάλα και σπίτι.
+                </p>
+              </div>
+            </article>
+            <article class="game-card">
+              <img
+                class="game-card__img"
+                src="../assets/photos/7eb6062a57f5a0a9b8ea4727722ed9ac.jpg"
+                width="1200"
+                height="675"
+                alt="Ένα PlayStation 5 με το χειριστήριό του"
+                loading="lazy"
+              />
+              <div class="game-card__text">
+                <h3 class="game-card__title">PlayStation</h3>
+                <p class="game-card__paragraph">
+                  Grand Theft Auto VI, EA Sports FC 27, NBA 2K27 και Call of
+                  Duty: Modern Warfare 4. Πιάστε ένα χειριστήριο και
+                  αναμετρηθείτε με τους φίλους σας.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIVE SPORTS SECTION -->
+      <section id="sports" class="sports">
+        <div class="sports__wrapper">
+          <div class="section-head">
+            <span class="section-head__label">Αθλητικά live</span>
+          </div>
+
+          <div class="sports__intro">
+            <div class="sports__text">
+              <h2 class="sports__title">
+                Ζωντανοί<br />
+                <em class="sports__title-accent">αγώνες.</em>
+              </h2>
+              <p class="sports__paragraph paragraph">
+                Κάθε μεγάλος αγώνας ζωντανά, με τον ήχο ψηλά. Διαλέξτε ένα
+                τραπέζι κοντά στην οθόνη.
+              </p>
+            </div>
+
+            <ol class="sports__list">
+              <li class="sports__item">Champions League</li>
+              <li class="sports__item">Πρωταθλήματα ποδοσφαίρου</li>
+              <li class="sports__item">Euroleague</li>
+              <li class="sports__item">Τένις</li>
+              <li class="sports__item">Βραδιές πυγμαχίας</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- BAR SECTION -->
+      <section id="bar" class="bar">
+        <div class="bar__wrapper">
+          <div class="section-head">
+            <span class="section-head__label">Ποτά</span>
+          </div>
+
+          <div class="bar__grid">
+            <div class="bar__text">
+              <h2 class="bar__title">
+                Το <em class="bar__title-accent">μπαρ</em>
+              </h2>
+              <p class="bar__paragraph paragraph">
+                Δέκα μπίρες στον πίνακα, μία για κάθε μπάλα.<br />
+                Ποτά και ελαφριά σνακ μέχρι το κλείσιμο.
+              </p>
+              <p class="bar__note paragraph">
+                Βαρελίσια από Mamos και Paulaner, Lagunitas IPA, Guinness,
+                μηλίτης και μία επιλογή χωρίς αλκοόλ για τον οδηγό.
+              </p>
+            </div>
+
+            <figure class="bar__image">
+              <img
+                class="bar__image-img"
+                src="../assets/photos/a6a77d6f46a5f49b9d37c158e4342be8.jpg"
+                width="990"
+                height="1400"
+                alt="Billy's Beer Board, από το 1987: δέκα μπίρες γραμμένες σε ένα κόκκινο τραπέζι μπιλιάρδου, η καθεμία δίπλα σε μια αριθμημένη μπάλα"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- HISTORY SECTION -->
+      <section id="history" class="history">
+        <div class="history__wrapper">
+          <div class="section-head">
+            <span class="section-head__label">Η ιστορία</span>
+          </div>
+
+          <div class="history__grid">
+            <div class="history__text">
+              <h2 class="history__title">
+                Από το <em class="history__title-accent"><br />1987</em>
+              </h2>
+              <p class="history__paragraph paragraph">
+                Ο Billy άνοιξε τις πόρτες το 1987. Η πόλη μπήκε και δεν
+                ξαναβγήκε. Σήμερα το μπαρ το τρέχει η νέα γενιά και οι παλιές
+                βραδιές κρέμονται ακόμα στον τοίχο.
+              </p>
+            </div>
+
+            <div class="history__gallery">
+              <figure class="history__frame">
+                <img
+                  class="history__gallery-img"
+                  src="../assets/photos/billiards_1987_4.webp"
+                  width="1132"
+                  height="688"
+                  alt="Το Billy’s τη δεκαετία του ’80, ένας παίκτης σημαδεύει σε πράσινο τραπέζι"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="history__frame">
+                <img
+                  class="history__gallery-img"
+                  src="../assets/photos/billiards_1987_3.webp"
+                  width="1132"
+                  height="693"
+                  alt="Μια γεμάτη βραδιά τη δεκαετία του ’80, παίκτες γύρω από τα τραπέζια"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="history__frame history__frame--tall">
+                <img
+                  class="history__gallery-img"
+                  src="../assets/photos/billiards_1987_2.webp"
+                  width="692"
+                  height="1161"
+                  alt="Θαμώνες στο μπαρ τη δεκαετία του ’80"
+                  loading="lazy"
+                />
+                <figcaption class="history__caption">
+                  Πρώτη σεζόν, 1987
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FIND US SECTION -->
+      <section id="find" class="find">
+        <div class="find__wrapper">
+          <div class="section-head">
+            <span class="section-head__label">Βρείτε μας</span>
+          </div>
+
+          <div class="find__grid">
+            <div class="find__text">
+              <h2 class="find__title">
+                Βρείτε <em class="find__title-accent">μας</em>
+              </h2>
+
+              <dl class="find__info">
+                <div class="find__info-item">
+                  <dt class="find__label">Ανοιχτά κάθε βράδυ</dt>
+                  <dd class="find__hours">18:00 – 01:00</dd>
+                </div>
+                <div class="find__info-item">
+                  <dt class="find__label">Διεύθυνση</dt>
+                  <dd class="find__value">
+                    <address class="find__address">
+                      Κωνσταντίνου Σφακιανάκη 20<br />
+                      Άγιος Νικόλαος 72100, Κρήτη<br />
+                      Θα δείτε το κόκκινο μπαλκόνι.
+                    </address>
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="hero__links">
+                <a
+                  class="button button--main"
+                  href="https://maps.app.goo.gl/GQYf6XqLFFtqe7Yu7"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Οδηγίες διαδρομής (ανοίγει σε νέα καρτέλα)"
+                  >Οδηγίες διαδρομής</a
+                >
+                <a class="button button--secondary" href="tel:+306970240215"
+                  >Καλέστε μας</a
+                >
+              </div>
+            </div>
+
+            <figure class="find__figure">
+              <img
+                class="find__img"
+                src="../assets/photos/location-img.webp"
+                width="1152"
+                height="2048"
+                alt="Το Billy’s τη νύχτα από τον δρόμο, το μπαλκόνι φωτισμένο κόκκινο και η μπλε επιγραφή νέον στο κάγκελο"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER SECTION SECTION -->
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <span class="footer__copy">© 2026 Billy's Public House</span>
+        <img
+          class="footer__logo"
+          src="../assets/billys-logo.svg"
+          alt="Billy's Public House"
+          width="40"
+          height="40"
+        />
+        <a
+          href="https://www.instagram.com/billys_publichouse/"
+          class="footer__link"
+          >Instagram</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

@@ -20,8 +20,9 @@
   --color-line: #ede6d81f;
   --color-line-dark: #11111140;
   --ff-yellowtail: "Yellowtail", cursive;
-  --ff-oswald: "Oswald", sans-serif;
-  --ff-body: "Lato", sans-serif;
+  /* Oswald and Lato have no Greek glyphs: Fira covers them as a per-glyph fallback */
+  --ff-oswald: "Oswald", "Fira Sans Extra Condensed", sans-serif;
+  --ff-body: "Lato", "Fira Sans", sans-serif;
   --fs-paragraph: clamp(1.05rem, 0.9rem + 0.4vw, 1.25rem);
   --fs-heading: clamp(4rem, 10vw, 12rem);
   --ls-small: 0.05em;
@@ -41,6 +42,7 @@ body {
 .billiards__wrapper,
 .games__wrapper,
 .sports__wrapper,
+.bar__wrapper,
 .history__wrapper,
 .find__wrapper,
 .footer__wrapper {
@@ -494,6 +496,47 @@ svg {
   margin-top: 1rem;
 } /* #endregion */
 
+/*=== BAR SECTION ===*/
+/* #region BAR */
+.bar {
+  --section-head-line: var(--color-line);
+  background-color: var(--bg-color);
+  color: var(--color-text-main);
+  padding-block: 7.5rem;
+}
+
+.bar__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.bar__title {
+  margin-bottom: 3rem;
+}
+
+.bar__paragraph {
+  max-width: 32ch;
+  color: var(--color-text-main);
+}
+
+.bar__note {
+  max-width: 40ch;
+  margin-top: 2rem;
+}
+
+.bar__image {
+  justify-self: end;
+  width: min(100%, 22rem);
+}
+
+.bar__image-img {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 1.25rem 2.5rem rgb(0 0 0 / 0.6);
+} /* #endregion */
+
 /*=== HISTORY SECTION ===*/
 /* #region HISTORY */
 .history {
@@ -929,6 +972,31 @@ svg {
     display: flex;
     flex-direction: column;
     margin-inline: 0;
+  } /* #endregion */
+
+  /*=== BAR MOBILE ===*/
+  /* #region BAR MOBILE */
+  .bar {
+    padding-inline: 1.25rem;
+    padding-block: 5rem 0;
+  }
+
+  .bar__wrapper {
+    margin-inline: 0;
+  }
+
+  .bar__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .bar__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .bar__image {
+    justify-self: stretch;
+    width: 100%;
   } /* #endregion */
 
   /*=== HISTORY MOBILE ===*/
